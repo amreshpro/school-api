@@ -1,0 +1,63 @@
+{
+  "name": "express",
+  "module": "index.js",
+  "type": "module",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/bun": "^1.1.11",
+    "@types/cors": "^2.8.17",
+    "@types/jest": "^29.5.13",
+    "@types/multer": "^1.4.12",
+    "@types/supertest": "^6.0.2",
+    "@types/swagger-ui-express": "^4.1.6",
+    "prisma": "^5.22.0",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "3.3.3",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "@eslint/js": "^9.13.0",
+    "@jest/globals": "^29.7.0",
+    "@types/express": "^5.0.0",
+    "@types/http-errors": "^2.0.4",
+    "@types/node": "^22.7.7",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/winston": "^2.4.4",
+    "bun": "^1.1.31",
+    "cors": "^2.8.5",
+    "eslint": "^9.13.0",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0",
+    "http-errors": "^2.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.15.0",
+    "zod": "^3.23.8"
+  },
+  "lint-staged": {
+    "**/*": [
+      "bun run lint",
+      "bun run format"
+    ]
+  },
+  "scripts": {
+    "build": "esbuild index.ts --bundle --minify --platform=node --target=node20 --outdir=dist",
+    "start": "bun run ./dist/index.js",
+    "dev": "bun run index.ts",
+    "lint": "eslint ./*.{js,ts}",
+    "format": "prettier . --write ",
+    "test": "jest",
+    "prepare": "husky"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma"
+  }
+}
