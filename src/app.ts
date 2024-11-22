@@ -33,7 +33,12 @@ app.get("/", (req, res, next) => {
   res.redirect("/api/v1/docs");
   next();
 });
-
+app.get("/test", (req, res) => {
+  res.json({
+    status: "ok",
+    message: "works fine",
+  });
+});
 const limiter = expressRateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // Limit each IP to 100 requests per windowMs
@@ -41,7 +46,11 @@ const limiter = expressRateLimit({
 
 app.use(limiter);
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false, // Allow Swagger resources
+  }),
+);
 // global error handler ( must be after routes)
 app.use(globalErrorHandler);
 

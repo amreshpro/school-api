@@ -1,32 +1,19 @@
-# Blog App
-
-A full-featured blog application built using **MERN Stack**. This app allows users to read, write, and manage blog posts with an intuitive and responsive UI.
-
-## Features
-
-- 📝 Create, edit, and delete blog posts
-- 🔍 Search for posts by title, author, or tags
-- 🖼️ Add images to posts
-- 👤 User authentication (login/signup)
-- 🧑‍💻 Admin panel for managing posts and users
-- 💬 Comments section for user interaction
-- 📱 Fully responsive design
-
-## Tech Stack
-
-- **Frontend**: [React.js | Next.js | Tailwind CSS]
-- **Backend**: [Node.js | Express.js]
-- **Database**: [MongoDB]
-- **Authentication**: [JWT]
+# School API
 
 ## Installation
 
-1. Clone the repository:
+### Step 1
+`git clone https://github.com/amreshpro/school-api `
+### Step 2
+`cd school-api`
+### Step 3
+`bun install`
 
-   ```bash
-   git clone https://github.com/amreshpro/blogjs.git
-   ```
-   ```bash
-   bun i
-   bun run dev
-   ```
+> Provide ENV Variables
+### Step 4
+`bun run build; bun run start`
+or
+`bun run dev`
+
+!['ss1'](./public/s1.png)
+!['ss1'](./public/s2.png)
